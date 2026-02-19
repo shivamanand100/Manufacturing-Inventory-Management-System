@@ -153,3 +153,6 @@ function clearForm() {
   document.getElementById("reorderLevel").value = "";
   document.getElementById("supplier").value = "";
 }
+function downloadCSV() {
+    window.open("http://127.0.0.1:8000/items/download-csv", "_blank");
+}
