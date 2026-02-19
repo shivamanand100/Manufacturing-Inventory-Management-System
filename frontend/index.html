@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Manufacturing Inventory Management</h1>
+</header>
+
+<section class="summary">
+    <div class="card">
+        <h3>Total Items</h3>
+        <p id="totalItems">0</p>
+    </div>
+    <div class="card">
+        <h3>Total Inventory Value</h3>
+        <p id="totalValue">₹0</p>
+    </div>
+    <div class="card">
+        <h3>Low Stock Items</h3>
+        <p id="lowStock">0</p>
+    </div>
+</section>
+
+<section class="form-section">
+    <h2>Add New Inventory Item</h2>
+
+    <div class="form-row">
+        <input type="text" id="itemName" placeholder="Item Name">
+
+        <select id="category">
+            <option value="">Select Category</option>
+            <option>Hardware</option>
+            <option>Mechanical</option>
+            <option>Electronics</option>
+            <option>Equipment</option>
+            <option>Consumables</option>
+            <option>Packaging</option>
+            <option>Materials</option>
+            <option>Safety Supplies</option>
+            <option>Tools</option>
+            <option>Spare Parts</option>
+            <option>Lubricants</option>
+            <option>Fasteners</option>
+        </select>
+
+        <input type="number" id="quantity" placeholder="Quantity In Stock">
+        <input type="number" id="reorderLevel" placeholder="Reorder Level">
+        <input type="text" id="supplier" placeholder="Supplier">
+
+        <button onclick="addItem()">Add Item</button>
+    </div>
+</section>
+
+
+<section class="table-section">
+    <h2>Inventory List</h2>
+    <table>
+<thead>
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Quantity</th>
+    <th>Reorder Level</th>
+    <th>Supplier</th>
+    <th>Last Updated</th>
+</tr>
+</thead>
+
+        <tbody id="inventoryTable"></tbody>
+    </table>
+</section>
+
+<section class="alerts">
+    <h2>Low Stock Alerts</h2>
+    <ul id="alertsList"></ul>
+</section>
+
+<section class="csv-upload">
+    <h2>Upload Inventory CSV</h2>
+    <label class="csv-logo">
+        <div class="icon">CSV</div>
+        <p>Click to Upload File</p>
+        <input type="file" id="csvFile" hidden>
+    </label>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
